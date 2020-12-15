@@ -7,14 +7,15 @@ import (
 
 func main() {
 	array := [...]int{0, 1, -2, 3, 4}
-	pointer := &array[0]     // 정수형 배열의 첫 번째 원소인 array[0]에 대한 메모리 주소를 가리킴
-	fmt.Print(*pointer, " ") // pointer를 역참조할 때는 *pointer와 같이 표기함
+	// 정수형 배열의 첫 번째 원소인 array[0]에 대한 메모리 주소를 가리킴
+	pointer := &array[0]
+	// pointer를 역참조할 때는 *pointer와 같이 표기함
 	// 그러면 그 주소에 저장되어 있던 정수 값을 리턴함
-	memoryAddress := uintptr(unsafe.Pointer(pointer)) + unsafe.Sizeof(array[0]) // pointer 변수를 unsafe.Pointer() 함수로 변환하고
-	// 다시 uintptr로 변환하여 결과를 memoryAddress에 저장함
-	// unsafe.Sizeof(array[0])의 값을 더하는 방식으로
-	// 이 배열의 그 다음 원소를 구할 수 있음
+	fmt.Print(*pointer, " ")
+	// pointer 변수를 unsafe.Pointer() 함수로 변환하고 다시 uintptr로 변환하여 결과를 memoryAddress에 저장함
+	// unsafe.Sizeof(array[0])의 값을 더하는 방식으로 이 배열의 그 다음 원소를 구할 수 있음
 	// 배열의 각 원소가 메모리에서 차지하는 공간은 모두 같기 때문임
+	memoryAddress := uintptr(unsafe.Pointer(pointer)) + unsafe.Sizeof(array[0])
 
 	for i := 0; i < len(array)-1; i++ {
 		pointer = (*int)(unsafe.Pointer(memoryAddress))
