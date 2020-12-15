@@ -13,7 +13,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	arguments := os.Args                           // os.Args ==> string 값을 가지는 Go 슬라이스
+	// os.Args ==> string 값을 가지는 Go 슬라이스
+	arguments := os.Args
 	min, _ := strconv.ParseFloat(arguments[1], 64) // 에러는 '_'[빈 식별자:Blank Identifier]를 이용하여 무시하도록 작성
 	max, _ := strconv.ParseFloat(arguments[1], 64)
 
