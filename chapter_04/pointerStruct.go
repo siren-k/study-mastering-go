@@ -35,8 +35,9 @@ func retStructure(n, s string, h int32) myStructure {
 func main() {
 	s1 := createStruct("Mihalis", "Tsoukalos", 123)
 	s2 := retStructure("Mihalis", "Tsoukalos", 123)
-	fmt.Println((*s1).Name) // 구조체 포인터가 가리키는 오브젝트를 사용하려면 리턴된 포인터를 역참조해야 한다.
+	// 구조체 포인터가 가리키는 오브젝트를 사용하려면 리턴된 포인터를 역참조해야 한다.
 	// 이로 인해 코드가 좀 지저분해 보일 수 있다.
+	fmt.Println((*s1).Name)
 	fmt.Println(s2.Name)
 	fmt.Println(s1)
 	fmt.Println(s2)
