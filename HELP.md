@@ -42,3 +42,26 @@ Go 코드를 잘 작성하는데 도움되는 조언을 몇 가지 제시하면 
 #### * [https://github.com/gasche/gc-latency-experiment](https://github.com/gasche/gc-latency-experiment) 에 가면 여러 가지 프로그래밍 언어의 가비지 컬렉터에 대한 벤치마킹 코드를 볼 수 있다.
 #### * 가비지 컬렉션에 대해 자세히 알고 싶다면 [http://gchandbook.org](http://gchandbook.org) 를 꼭 한 번 가보기 바란다.
 #### * cgo에 대한 공식 문서인 [https://golang.org/cmd/cgo](https://golang.org/cmd/cgo) 도 방문하기 바란다.
+
+---
+
+# _3장 Go 언어의 기본 데이터 타입_
+
+---
+##_요약_
+> 이 장에서는 맵, 배열, 슬라이스, 포인터, 상수, 루프, 날짜와 시간을 다루는 방법과 같이 Go 언어에서 제공하는 여러 가지 흥미로운 기능에 대하
+> 살펴봤다. 이제 슬라이스가 배열보다 뛰어난 이유를 이해했을 것이다.
+---
+##_참고자료_
+
+---
+#### * time 패키지에 대한 공식 문서 [http://golang.org/pkg/time](http://golang.org/pkg/time)
+#### * 표준 Go 패키지인 regexp에 대한 [공식 문서](http://golang.org/pkg/regexp)
+
+##_연습문제_
+> * 숫자 4의 제곱에 대한 상수 생성자 iota를 작성한다.
+> * 한 주의 요일에 대한 상수 생성자 iota를 작성한다.
+> * 배열을 맵으로 변화하는 프로그램을 작성한다.
+> * parseTime.go를 원하는 형태로 수정하다. 이때 테스트도 반드시 수행한다.
+> * 두 가지의 날짜 및 시간 포맷을 처리하도록 timeDate.go를 수정한다.
+> * parseDate.go를 원하는 형태로 수정한다.
