@@ -61,4 +61,6 @@ func main() {
 	k := returnPointer(12)
 	fmt.Println(*k)
 	fmt.Println(k)
+
+	// C 언어에서 스트링은 포인터 타입인데 반해, Go 언어에서는 값 타입(Value Type)이다
 }
