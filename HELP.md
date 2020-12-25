@@ -100,4 +100,38 @@ Go 코드를 잘 작성하는데 도움되는 조언을 몇 가지 제시하면 
 > * 표준 Go 패키지인 math/big을 사용하여 제곱근을 높은 정확도로 구하는 Go 프로그램을 작성한다.
     여기서 사용할 알고리즘은 마음대로 고른다.
 
+---
+# _5장 자료 구조로 Go 코드 개선하기_
+
+---
+##_요약_
+> 5장에서는 Go 언어의 자료 구조에 관련된 흥미롭고 유용한 주제애 대해 다양하게 살펴봤다. 여기서는 연결 리스트,
+> 해시 테이블, 큐, 스택을 구현하는 방법을 소개하고, 표준 Go 패키지인 container에서 제공하는 여러 가지 기능을 
+> 살펴봤다. 5장을 읽고 나서 반드시 기억할 점은, 자료 구조마다 노드를 정의하고 구현하는 부분이 가장 중요하다는
+> 점이다.
+
+---
+##_참고자료_
+#### * 자체 정의한 언어로 그래프를 그리는 유틸리티인 [그래피즈(Graphviz)](http://graphviz.org)
+#### * 표준 Go 패키지인 container에 대한 [공식 문서](https://golang.org/pkg/container)
+#### * 자료 구조에 대해 좀 더 알고 싶은 독자는 알프레드 V. 에이호(Alfred V. Aho), 존 E. 홉크로프트(John E. Hopcroft), 제프리 D. 울만(Jeffrey D. Ullman)의 'The Design and Analysis of Computer Algorithms(Addison-Wesley Professional, 1974)'를 꼭 한번 읽어보기 바란다. 정말 좋은 책이다.
+#### * 그 밖에 알고리즘과 자료 구조에 대해 잘 설명하고 있는 책을 추천하면, 존 베틀리(Jonb Bentley)의 'Programming Pearls(Addison-Wesley Professional, 1999)', 동 저자의 'More Programming Pearls(Addison-Wesley Profession, 1988)' 등이 있다. 두 책 모두 읽으면 더욱 훌륭한 프로그래머가 될 수 있다.
+
+---
+##_연습문제_ 
+> * 패스워드 목록에서 하나를 고르는 방식으로 generatePassword.go의 로직을 변경한다. 이 때, 패스워드 목록은
+>   슬라이스로 표현하며, 패스워드 값에 현재 시스템 시각 또는 날짜와 결합한다.
+> * queue.go에서 정수 대신 부동 소수점 수를 저장할 수 있도록 수정한다.
+> * stack.go에서 각 노드에 세 개의 정수형 데이터 필드를 가지도록 수정한다. 각 필드의 이름을 Value, Number,
+>   Seed로 짓는다. 그러면 Nodestruct를 정의하는 외형적인 부분 말고, 나머지 코드에서 어떤 점이 크게 달라지는지 살펴본다.
+> * linkedList.go에서 연결 리스트의 노드를 항상 정렬된 상태를 유지하도록 수정한다.
+> * 마찬가지로, doublyLinkedList.go에서 리스트를 항상 정렬된 상태를 유지하도록 수정한다. 또한, 기존 노드를
+>   삭제하는 함수를 작성한다.
+> * hashTableLookup.go에서 해시 테이블의 값이 중복되지 않도록 변경한다. 이 때, lookup() 함수를 활용한다.
+> * generatePassword.go에서 대문자로만 구성된 패스워드를 생성하도록 변경한다.
+> * conHeap.go에서 float32 대신=, 좀 더 커스텀 구조체를 지원하도록 변경한다.
+> * linkedList.go에 빠진 노드 삭제 기능을 구현한다.
+> * queue.go를 이중 연결 리스트로 구현하면 더 나아질까? 직접 구현해보기 바란다.
+
+---
 
