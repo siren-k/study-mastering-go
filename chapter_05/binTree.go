@@ -32,12 +32,12 @@ func create(n int) *Tree {
 	rand.Seed(time.Now().Unix())
 	for i := 0; i < 2*n; i++ {
 		temp := rand.Intn(n * 2)
-		t = insert(t, temp)
+		t = insertTree(t, temp)
 	}
 	return t
 }
 
-func insert(t *Tree, v int) *Tree {
+func insertTree(t *Tree, v int) *Tree {
 	/*
 	 * 트리가 비었는지 검사한다.
 	 * 트리가 비어 있다면 새로 생성한 노드가 트리의 루트가 되며 &Tree{nil, v, nil}로 생성한다.
@@ -58,11 +58,11 @@ func insert(t *Tree, v int) *Tree {
 	 * 현재 노드의 상태에 따라 추가할 값을 노드의 왼쪽에 넣을지, 아니면 오른쪽에 넣을지 판단한다.
 	 */
 	if v < t.Value {
-		t.Left = insert(t.Left, v)
+		t.Left = insertTree(t.Left, v)
 		return t
 	}
 
-	t.Right = insert(t.Right, v)
+	t.Right = insertTree(t.Right, v)
 
 	return t
 }
@@ -99,8 +99,8 @@ func main() {
 	traverse(tree)
 	fmt.Println()
 
-	tree = insert(tree, -10)
-	tree = insert(tree, 2)
+	tree = insertTree(tree, -10)
+	tree = insertTree(tree, 2)
 	traverse(tree)
 	fmt.Println()
 
