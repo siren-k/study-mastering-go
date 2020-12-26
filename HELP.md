@@ -135,3 +135,35 @@ Go 코드를 잘 작성하는데 도움되는 조언을 몇 가지 제시하면 
 
 ---
 
+---
+# _6장 Go 패키지에 대해 잘 알려지지 않은 사실_
+
+---
+##_요약_
+> 6장에서는 Go 언어의 함수와 Go 언어의 패키지라는 두 가지 주제를 중심으로 살펴봤다. 또한 바람직한 Go 패키지를
+> 작성하는데 도움되는 팁도 소개했다. 일반 텍스트와 HTML 출력을 템플릿 기반으로 생성하는 text/template과
+> html/template 패키지에 대해서도 살펴봤다. 마지막으로 표준 Go 패키지인 syscall에서 제공하는 고급 기능도
+> 알아봤다.
+
+---
+##_참고자료_
+#### * 표준 Go 패키지인 syscall에 대한 [공식 문서](https://golang.org/pkg/syscall) 도 한 번 읽어본다. 지금껏 내가 본 Go 문서 페이지 중에서 가장 길다.
+#### * text/template 패키지에 대한 [공식 문서](https://golang.org/pkg/text/tempate) 도 방문하기 바란다.
+#### * 마찬가지로 html/template 패키지에 대한 [공식 문서](https://golang.org/pkg/html/template) 페이지도 방문한다.
+#### * [SQLite3 홈페이지](https://www.sqlite.org) 도 가본다.
+#### * 맷 라이어(Mat Ryer)의 Writing Beautiful Packages in Go 동영상도 보기 바란다.
+#### * 플랜 9(Plan 9)에 대해 자세히 알고 싶으면 [https://plat9.io/plan9](https://plat9.io/plan9) 을 참고하기 바란다.
+#### * find(1) 커맨드라인 도구의 맨 페이지(man 1 find)를 찬찬히 읽어보기 바란다.
+
+---
+##_연습문제_
+> * fmt.Println() 함수의 실제 구현 코드를 좀 더 자세히 살펴본다.
+> * 세 개의 int 값을 정렬하는 함수를 작성한다. 이 함수를 두 가지 버전으로 구현한다. 하나는 이름이 있는 리턴값으로
+>   다른 하나는 이름 있는 리턴값을 사용하지 않도록 정의한다. 둘 중 어느 것이 나은가?
+> * htmlT.go에서 html/template 대신 text/template을 사용하도록 수정한다.
+> * htmlT.go에서 SQLite3 데이터베이스와 통신하는데 https://github.com/feyeleanor/gosqlite3이나 
+>   https://github.com/phf/go-sqlite3 패키지 중 하나를 사용하도록 수정한다.
+> * htmlT.go처러 MySQL 데이터베이스로부터 데이터를 읽는 프로그램을 작성한다. htmlT.go과 다른 부분을 나열한다.
+
+---
+
