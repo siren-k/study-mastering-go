@@ -39,6 +39,13 @@ func main() {
 	var manyNames NamesFlag
 	minusK := flag.Int("k", 0, "An int")
 	minusO := flag.String("o", "Mihalis", "The name")
+	// flag.Var() 함수를 이용하여 flag.Value 인터페이스를 충족하는 모든 종류의 플래그를 생성한다.
+	// 이 인터페이스는 다음과 같이 정의돼 있다.
+	//
+	// type Value interface {
+	//     String() string
+	//     Set(string) error
+	// }
 	flag.Var(&manyNames, "names", "Comma-separated list")
 
 	flag.Parse()
@@ -49,6 +56,8 @@ func main() {
 		fmt.Println(i, item)
 	}
 
+	// 나머지 커맨드라인 인수는 flags.Args() 슬라이스에 담겨 있다. 반면, manyNames 변수는
+	// flag.Var() 커맨드라인 옵션에서 받은 값을 담고 있다.
 	fmt.Println("Remaining command-line arguments:")
 	for index, val := range flag.Args() {
 		fmt.Println(index, ":", val)
