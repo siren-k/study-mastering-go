@@ -43,6 +43,6 @@ func main() {
 			fmt.Println(err)
 			continue
 		}
-		fmt.Printf("Read %s Bytes: %d", b, n)
+		fmt.Printf("Read %s Bytes: %d\n", b, n)
 	}
 }
