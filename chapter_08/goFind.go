@@ -39,6 +39,9 @@ func walk(path string, info os.FileInfo, err error) error {
 }
 
 func main() {
+	/*
+	 * 커맨드라인 인수를 효율적으로 처리하도록 flag 패키지를 이용하고 있다.
+	 */
 	starD := flag.Bool("d", false, "Signify directories")
 	plusF := flag.Bool("f", false, "Signify regular files")
 	flag.Parse()
