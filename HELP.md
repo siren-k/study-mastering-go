@@ -306,5 +306,40 @@ Go 코드를 잘 작성하는데 도움되는 조언을 몇 가지 제시하면 
 >   사용하도록 수정한다.
 > * 마지막으로, sync.Mutex 타입의 뮤텍스를 이용해 find(1) 커맨드라인 유틸리티에 대한 동시성 버전을 Go 언어로
 >   구현한다.
+ 
+---
+# _11장 코드 테스팅, 최적화, 프로파일링_
 
 ---
+##_요약_
+> 11장에서는 코드 테스팅, 최적화, 프로파일링에 대해 살펴봤다. 마지막 부분에서는 실행되지 않는 코드 영역을 찾고
+> 크로스 컴파일하는 방법에 대해 배웠다. 그리고 go test 커맨드를 이용해 Go 코드를 테스트하고 벤치마킹하는 방법과
+> 예제 함수를 통해 문서에 부가 정보를 추가하는 방법도 소개했다.
+> 
+> Go 프로파일러와 go tool trace의 완성도는 그리 높지 않지만 프로파일링과 코드 트레이싱(추적)에 대한 개념은
+> 반드시 알아두는게 좋다. 새로운 기법을 익히기 위한 가장 좋은 방법은 직접 사용해보는 것이다.
+
+---
+##_참고자료_
+#### * [그래피즈 웹사이트](http://graphviz.org)
+#### * testing 패키지에 대한 [문서](https://golang.org/pkg/testing/)
+#### * godoc 유틸리티에 대한 [문서](https://godoc.org/golang.org/x/tools/cmd/godoc)
+#### * 표준 Go 패키지인 runtime/pprof에 대한 [문서](https://golang.org/pkg/runtime/pprof.go)
+#### * net/http/pprof 패키지의 [소스 코드](https://golang.org/src/net/http/pprof/pprof.go)
+#### * net/http/pprof 패키지에 대한 [문서](https://golang.org/pkg/net/http/pprof/)
+#### * [Go 1.10 버전과 1.9 버전 사이의 차이점](https://golang.org/doc/go1.10)
+#### * pprof 도구에 대한 [페이지](https://github.com/google/pprof)
+#### * 고퍼폰(GopherCon) 2017에서 미첼 하시모토(Mitchell Hashimoto)가 발표한 [고급 테스팅 기법 동영상](https://www.youtube.com/watch?v=8hQG7QlcLBk)
+#### * testing 패키지에 대한 [소스 코드](https://golang.org/src/testing/testing.go)
+#### * profile 패키지에 대한 [웹 페이지](https://github.com/pkg/profile)
+#### * go fix 도구에 대한 [웹 페이지](https://golang.org/cmd/fix/)
+
+---
+##_연습문제_
+> * 8장, '유닉스 시스템 프로그래밍'에서 만든 byWord.go에 대한 테스트 함수를 작성한다.
+> * 8장, '유닉스 시스템 프로그래밍'에서 만든 readSize.go에 대한 벤치마크 함수를 작성한다.
+> * documentMe.go와 documentMe_test.go에서 발생한 문제를 해결한다.
+> * go tool pprof 유틸리티의 텍스트 인터페이스를 이용해 profileMe.go에서 생성된 memoryProfile.out
+>   파일을 분석한다.
+> * 그런 다음, go tool pprof 유틸리티의 웹 인터페이스를 이용해 profileMe.go에서 생성된 memoryProfile.out
+>   파일을 분석한다.
