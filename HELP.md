@@ -343,3 +343,45 @@ Go 코드를 잘 작성하는데 도움되는 조언을 몇 가지 제시하면 
 >   파일을 분석한다.
 > * 그런 다음, go tool pprof 유틸리티의 웹 인터페이스를 이용해 profileMe.go에서 생성된 memoryProfile.out
 >   파일을 분석한다.
+
+---
+# _12장 Go 언어를 이용한 네트워크 프로그래밍의 기초_
+
+---
+##_요약_
+> 이 장에서는 Go 언어로 웹 클라이언트와 웹 서버를 구현하는 방법뿐만 아니라 웹 사이트를 만드는 방법도 살펴봤다.
+> 또한 http.Response, http.Request, http.Transport 구조체를 이용해 HTTP 연결에 대한 매개변수를
+> 정의하는 방법도 소개했다.
+> 
+> 또한 Go 프로그램에서 유닉스 머신의 네트워크 설정 정보를 가져오고, DNS를 조회하고, 도메인에 대한 NS와 MX 레코드를
+> 가져오는 방법도 살펴봤다.
+> 
+> 마지막으로 와이어샤크와 티샤크에 대해서도 간략히 소개했다. 네트워크 트래픽을 수집하고 분석하는 유틸리티 중에서도
+> 대표적으로 손꼽히는 도구다. 또한 이 장의 서두에서 nc(1) 유틸리티 사용법도 간략히 소개했다.
+
+---
+##_참고자료_
+#### * 아피치 웹 서버의 [공식 웹 페이지](http://httpd.apache.org/)
+#### * 엔진엑스(Nginx) 웹 서버의 [공식 웹 페이지](http://nginx.org/)
+#### * 인터넷과 TCP/IP와 다양한 서비스에 대핸 좀 더 알고 싶다면 RFC 문서부터 읽는 것이 좋다. 이러한 문서를 제공하는 사이트 중 하나로 [http://www.rfc-archive.org](http://www.rfc-archive.org) 를 추천한다.
+#### * 와이어샤크와 티샤크 [홈페이지](https://www.wireshark.org/) 도 참고한다.
+#### * 표준 Go 패키지인 net의 [홈페이지](https://goloang.org/pkg/net/) 도 참고한다. 공식 Go 문서 중에서도 내용이 가장 방대하다.
+#### * 표준 Go 패키지인 net/http의 [홈페이지](https://goloang.org/pkg/net/http/) 도 참고한다.
+#### * Go 코드를 하나도 작성하지 않고 웹 사이트를 만들고 싶다면 휴고(Hugo) 유틸리티를 써보기 바란다. 휴고는 Go 언어로 구현한 것이다. 자세한 사항은 [https://gohugo.io/](https://gohugo.io/) 를 참고한다. 그런데 휴고가 정작 유용한 부분은 그 기능보다는 휴고를 구현한 [코드](https://github.com/gohugoio/hugo) 에 있다. Go 프로그래머 입장에서 꼭 한 번 읽어볼만 하다.
+#### * net/http/httptrace 패키지에 대한 [공식 문서](https://golang.org/pkg/net/http/httptrace) 도 참고한다.
+#### * net/http/pprof 패키지에 대한 [공식 문서](https://golang.org/pkg/net/http/pprof) 도 참고한다.
+#### * nc(1) 커맨드라인 유틸리티에서 제공하는 기능과 다양한 옵션에 대해 자세히 알고 싶다면 맨페이지를 읽어보기 바란다.
+#### * 데이브 체니(Dave Cheney)가 개발한 httpstat 유틸리티는 [https://github.com/davecheney/httpstat](https://github.com/davecheney/httpstat) 에서 볼 수 있다. net/http/httptrace 패키지로 HTTP 트레이싱을 구현하는 좋은 예도 나와 있다.
+#### * ab(1)에 대한 자세한 사항은 [메뉴얼 페이지](https://httpd.apache.org/docs/2.4/programs/ab.html) 를 참고한다.
+
+---
+##_연습문제_
+> * 앞에 나온 코드를 보지 않고 Go 언어로 웹 클라이언트를 작성한다.
+> * MXrecords.go와 NSrecords.go를 합쳐서 두 기능을 모두 제공하는 하나의 유틸리티로 만든다. 각 기능은
+    커맨드라인 인수로 지정한다.
+> * MXrecords.go와 NSrecords.go에서 IP 주소를 입력받을 수 있도록 수정한다.
+> * HTML 출력을 외부 파일에 저장할 수 있도록 advancedWebClient.go를 수정한다.
+> * ab(1)의 간략한 버전을 Go 루틴으로 직접 구현한다.
+> * 원본 키-값 스토어에 있는 DELETE와 LOOKUP 연산을 제공하도록 kvWeb.go를 수정한다.
+> * io.Copy(os.Stdout, response.Body) 문장을 실행하지 않는 플래그를 추가하도록 httpTrace.go를
+>   수정한다.
