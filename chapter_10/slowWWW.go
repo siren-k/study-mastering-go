@@ -13,7 +13,7 @@ func random(min, max int) int {
 }
 
 func myHandler(w http.ResponseWriter, r *http.Request) {
-	delay := random(0, 15)
+	delay := random(0, 20)
 	time.Sleep(time.Duration(delay) * time.Second)
 
 	fmt.Fprintf(w, "Serving: %s\n", r.URL.Path)
